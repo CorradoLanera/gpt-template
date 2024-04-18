@@ -56,8 +56,8 @@ list.files("R/", full.names = TRUE) |>
 #
 # task <- "Il tuo compito è capire se sono soddisfatti del corso."
 # instructions <- "Analizza i commenti e decidi se sono soddisfatti o meno."
-# output <- "Riporta 'soddisfatto' o 'insoddisfatto'."
-# style <- "Non aggiungere nessun commento, restituisci solo ed esclusivamente la classificazione."
+# output <- "Riporta 'soddisfatto' o 'insoddisfatto', in caso di dubbio o impossibilità riporta 'NA'."
+# style <- "Non aggiungere nessun commento, restituisci solo ed esclusivamente una delle classificazioni possibile."
 #
 # examples <- "
 # commento_1: 'Mi è piaciuto molto il corso; davvero interessante.'
