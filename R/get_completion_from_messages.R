@@ -224,7 +224,7 @@ query_gpt <- function(
 #'     examples = examples
 #'   )
 #'  res
-#'
+#' }
 query_gpt_on_column <- function(
     db,
     text_column,

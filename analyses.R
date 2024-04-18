@@ -133,6 +133,7 @@ examples <- "" # Examples of the input/output you want
 res <- db |>
   query_gpt_on_column(
     text_column = "<text_column_name>",
+    # model = "gpt-4-turbo", # "gpt-3.5-turbo" by default
     role = role,
     context = context,
     task = task,
