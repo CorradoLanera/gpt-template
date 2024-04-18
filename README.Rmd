@@ -1,0 +1,43 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# gpt-template
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+The goal of `{gpt-template}` is to provide a template for gpt analyses
+based on the `openai` package. The main purpose is to facilitate programmatically queries from textual column in a dataset.
+
+## Usage
+
+You can use this template by calling the following command in any R session:
+
+``` r
+# install.packages("usethis")
+usethis::use_zip("CorradoLanera/gpt-template")
+```
+
+After everything is (automatically) downloaded, and (automatically) restarted following the instruction:
+
+0. Close RStudio
+1. Rename the downloaded folder and its inner .Rproj file, accordingly to your project requirements (use the same name for both).
+2. Move the folder to the desired location.
+3. Put your data inside the `data-raw/` folder.
+4. Open the project in RStudio.
+5. Run, and accept, `renv::restore()` to install the required packages.
+6. Open the `analyses.R` script to start your analyses; inside you will find the template and a commented example to start from.
+

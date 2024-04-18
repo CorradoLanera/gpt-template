@@ -1,0 +1,8 @@
+renv::snapshot()
+usethis::git_vaccinate()
+usethis::git_sitrep()
+usethis::use_description(check_name = FALSE)
+install.packages("rmarkdown")
+usethis::use_readme_rmd()
+renv::snapshot()
+usethis::use_lifecycle_badge("experimental")
