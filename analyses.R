@@ -12,6 +12,17 @@ library(here)
 ##
 ## OPENAI_API_KEY="your-key-here"
 ##
+## The following code will check if the .Renviron file exists and if it
+## contains the OPENAI_API_KEY. If not, it will open the .Renviron file
+## for you to edit it. If the file does not exist, it will create it.
+## So you can execute it safely even if you are not sure if the .Renviron
+## file exists or if it contains the OPENAI_API_KEY.
+##
+## Only if you need to add the key, after you have added it, restart
+## your R session.
+## You need to do this only once (so, after the first time, you can
+## delete or comment out this code).
+##
 ## WARNING: do not share your API_KEY with others
 ##          do not include it in your code
 ##          do not commit it to repositories
@@ -44,7 +55,7 @@ list.files("R/", full.names = TRUE) |>
 # Usage example ---------------------------------------------------
 #
 # db <- tibble(
-#   commenti = c(
+#   commenti = c(          # you can name this column as you prefer
 #     "Che barba, che noia!",
 #     "Un po' noioso, ma interessante",
 #     "Che bello, mi è piaciuto molto!"
@@ -84,7 +95,9 @@ list.files("R/", full.names = TRUE) |>
 
 # data ------------------------------------------------------------
 
-## We expect to find the data in the `data-raw/` directories
+## We expect to find the data in the `data-raw/` directories.
+## If you have the data in a different location, you can change the
+## path accordingly.
 input_db_path <- here("data-raw/db.csv")
 db_raw <- read_csv(input_db_path)
 
@@ -96,14 +109,20 @@ db_raw <- read_csv(input_db_path)
 db <- db_raw |>
   clean_names() |>
   select(
-    # which columns to keep
+    # columns to keep
   ) |>
   mutate(
-    # some preprocessing
+    # creates new columns that are functions of existing variables. You
+    # can also modify (if the name is the same as an existing column)
+    # and delete columns (by setting their value to NULL).
   ) |>
   filter(
-    # which rows to keep
+    # rows to keep, retaining all rows that satisfy your conditions
+  ) |>
+  drop_na(
+    # columns to check for NAs, removing the rows with NAs in any of them.
   )
+
 
 
 
